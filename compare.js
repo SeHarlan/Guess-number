@@ -1,4 +1,4 @@
-export function compareNumbers(guess, correctNumber) {
+export default function compareNumbers(guess, correctNumber) {
 
     if (guess === correctNumber) {
 
@@ -16,7 +16,9 @@ export function compareNumbers(guess, correctNumber) {
         return 1;
 
     } else {
-        console.log('not a number or math things went really wrong');
+        alert('not a number or math has failed us');
+        throw new Error('not a number or math has failed us');
+        //return false;
     }
     
 }
