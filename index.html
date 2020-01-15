@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Guess a Number</title>
+</head>
+
+<body>
+
+    <Header>Guess a number between 1 and 20</Header>
+
+    <p>You only get four tries, guess a number between 1 and 20.</p>
+
+    <label for="number-input">Enter your number here:</label>
+    <input type="number" id="number-input" min="1" max="20">
+
+    <input type="submit" id="submit-button">
+
+    <span id="tries-remaining">4 tries remaining.</span>
+
+    <span id="guess-was">?</span>
+
+    <div id="win-lose">??</div>
+
+
+
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
