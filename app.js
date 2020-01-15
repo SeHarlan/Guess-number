@@ -9,55 +9,74 @@ const mainBody = document.getElementById('main-body');
 const resultsSection = document.getElementById('results-section');
 const resetButton = document.getElementById('reset');
 
-//random number
+//random number generator from MDN
 const correctNumber = Math.ceil(Math.random() * 20);
 console.log(correctNumber);
 
 let remainCount = 4;
 
+
 function submit() {
-    
+    //testing for blank field
+    if (input.value === '') {
+        alert('enter a number');
+        return;
+    }
     //gets value from string field and converts to number
     const userGuess = Number(input.value);
 
+    //testing for number over 20
+    if (userGuess > 20) {
+        alert('enter a number below 21');
+        return;
+    }
+
     const newResults = compareNumbers(userGuess, correctNumber);
+
+    function youWon() {
+        mainBody.style.display = 'none';
+        winLose.textContent = 'Congrats, You Got It!';
+        resultsSection.style.opacity = '1';
+    }
+
+    function youLost() {
+        mainBody.style.display = 'none';
+        winLose.textContent = 'You have failed!';
+        resultsSection.style.opacity = '1';
+    }
 
     function reduceCount() {
         remainCount--;
         if (remainCount <= 0) {
-            mainBody.style.display = 'none';
-            winLose.textContent = 'You have failed!';
-            resultsSection.style.opacity = '1';
+            youLost();
             //fully lost code
         } 
     }
 
-
-    if (newResults === 0) {
-        mainBody.style.display = 'none';
-        winLose.textContent = 'You got it!';
-        resultsSection.style.opacity = '1';
-        //winning code
-    
-    } else if (newResults === -1) {
-        reduceCount();
+    function displayResults(lowOrHi) {
         triesRemaining.textContent = (`${remainCount} tries remaining.`);
-        guessWas.textContent = 'Your guess was too low.';
-        //guess too low code
-
-    } else if (newResults === 1) {
-
-        reduceCount();
-        triesRemaining.textContent = (`${remainCount} tries remaining.`);
-        guessWas.textContent = 'Your guess was too hi.';
-        //guess too high code
-
-    } else {
-        //error code
+        guessWas.textContent = `Your guess was too ${lowOrHi}.`;
     }
 
 
 
+    if (newResults === 0) {
+        youWon();
+        //winning code
+    
+    } else if (newResults === -1) {
+        reduceCount();
+        displayResults('low');
+        //guess too low code
+
+    } else if (newResults === 1) {
+        reduceCount();
+        displayResults('hi');
+        //guess too high code
+
+    } else {
+        throw new Error('results inconclusive');
+    }
 } 
 button.addEventListener('click', submit);
 
