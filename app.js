@@ -25,34 +25,30 @@ function submit() {
     function reduceCount() {
         remainCount--;
         if (remainCount <= 0) {
-            button.disabled = 'true';
             mainBody.style.display = 'none';
             winLose.textContent = 'You have failed!';
             resultsSection.style.opacity = '1';
             //fully lost code
-            
         } 
     }
 
 
     if (newResults === 0) {
-        button.disabled = 'true';
         mainBody.style.display = 'none';
         winLose.textContent = 'You got it!';
         resultsSection.style.opacity = '1';
         //winning code
     
     } else if (newResults === -1) {
-
         reduceCount();
-        triesRemaining.textContent = (`${remainCount} tries remaining`);
+        triesRemaining.textContent = (`${remainCount} tries remaining.`);
         guessWas.textContent = 'Your guess was too low.';
         //guess too low code
 
     } else if (newResults === 1) {
 
         reduceCount();
-        triesRemaining.textContent = (`${remainCount} tries remaining`);
+        triesRemaining.textContent = (`${remainCount} tries remaining.`);
         guessWas.textContent = 'Your guess was too hi.';
         //guess too high code
 
@@ -63,6 +59,17 @@ function submit() {
 
 
 } 
-
 button.addEventListener('click', submit);
+
+
+const resetPage = () => {
+    const userChoice = window.confirm('Are you sure???');
+
+    if (userChoice === true) {
+        document.location.reload();
+    } else {
+        return false;
+    }
+};
+resetButton.addEventListener('click', resetPage);
 

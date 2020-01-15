@@ -7,30 +7,33 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <title>Guess a Number</title>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+    
 </head>
 
 <body>
 
-    <Header>Guess a number between 1 and 20</Header>
+    <Header>Guess a Number!</Header>
 
     <p>You only get four tries, guess a number between 1 and 20.</p>
     <content id="main-body">
 
         <label for="number-input">Enter your number here:</label>
         <input type="number" id="number-input" min="1" max="20">
-    
-        <input type="submit" id="submit-button">
-    
-        <span id="tries-remaining">4 tries remaining.</span>
-    
-        <span id="guess-was"></span>
-    
+        <br>
+        <input type="submit" class="button" id="submit-button">
+        <br>
+        <div class="feedback">
+            <span id="tries-remaining">4 tries remaining.</span>
+            <br>
+            <span id="guess-was"></span>    
+        </div>
         
     </content>
     
     <footer id="results-section">
         <div id="win-lose"></div>
-        <input type="reset" id="reset">
+        <input type="reset" class="button" id="reset">
     </footer>
 
 
