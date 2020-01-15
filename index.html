@@ -14,18 +14,24 @@
     <Header>Guess a number between 1 and 20</Header>
 
     <p>You only get four tries, guess a number between 1 and 20.</p>
+    <content id="main-body">
 
-    <label for="number-input">Enter your number here:</label>
-    <input type="number" id="number-input" min="1" max="20">
-
-    <input type="submit" id="submit-button">
-
-    <span id="tries-remaining">4 tries remaining.</span>
-
-    <span id="guess-was">?</span>
-
-    <div id="win-lose">??</div>
-
+        <label for="number-input">Enter your number here:</label>
+        <input type="number" id="number-input" min="1" max="20">
+    
+        <input type="submit" id="submit-button">
+    
+        <span id="tries-remaining">4 tries remaining.</span>
+    
+        <span id="guess-was"></span>
+    
+        
+    </content>
+    
+    <footer id="results-section">
+        <div id="win-lose"></div>
+        <input type="reset" id="reset">
+    </footer>
 
 
     <script type="module" src="app.js"></script>
