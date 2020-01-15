@@ -18,16 +18,26 @@ let remainCount = 4;
 
 function submit() {
     //testing for blank field
-    if (input.value === '') {
-        alert('enter a number');
-        return;
-    }
+    //not needed with >20 || <=0 test
+    // if (input.value === '') {
+    //      alert('enter a number');
+    //      return;
+    //  }
+
     //gets value from string field and converts to number
     const userGuess = Number(input.value);
+    
+    console.log(userGuess);
+    //testing for invalid input
+    // I found that the Number function always returned 0 so the (> 20) test takes care of this.
+    // if (userGuess === undefined || userGuess === null) {
+    //     alert('please enter a number');
+    //     return;
+    // }
 
-    //testing for number over 20
-    if (userGuess > 20) {
-        alert('enter a number below 21');
+    //testing for number over 20 below 0 or a string that was turned in 0 by the Numeber Function
+    if (userGuess > 20 || userGuess <= 0) {
+        alert('Enter a number between (and including) 1 and 20.');
         return;
     }
 
