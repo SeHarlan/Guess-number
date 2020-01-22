@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('./cards-1030852_1920.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #13353f;
+    color: whitesmoke;
+    text-align: center;
+    text-shadow: 2px 2px 2px black;
+    font-family: 'Playfair Display', serif; 
+    margin-top: 150px;
+}
+
+header {
+    font-weight: bolder;
+    /* text-transform: uppercase; */
+    font-size: larger;
+    text-shadow: 3px 3px 3px black;
+}
+
+p {
+    font-style: italic;
+}
+
+.feedback {
+    font-weight: bold;
+
+}
+
+
+.button {
+    margin: 20px;
+    box-shadow: 1px 1px 2px black;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.5s ease;
+    
+}
+.button:hover {
+    box-shadow: 3px 3px 3px black;
+    border: 3px solid rgba(7, 65, 21, 0.534);
+    
+}
+
+#tries-remaining {
+    font-size: large;
+    font-weight: bold;
+    color: rgb(248, 236, 210);
+    text-shadow: 3px 3px 3px black;
+    text-decoration: underline;
+}
+#guess-was {
+    
+    font-style: italic;
+}
+#win-lose {
+    font-weight: bolder;
+    font-size: larger;
+}
+
+#results-section {
+    opacity: 0;
+}
+
+#number-input {
+    box-shadow: 1px 1px 2px black;
+}
+
